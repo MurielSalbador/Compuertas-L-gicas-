@@ -192,7 +192,9 @@ export function LogicNode({
         ) : (
           <span 
             className="text-xs text-zinc-400 font-mono cursor-text min-h-[16px] px-1 hover:bg-zinc-800 rounded bg-zinc-900/50 whitespace-nowrap"
-            onPointerDown={(e) => { 
+            onPointerDown={(e) => e.stopPropagation()}
+            onMouseDown={(e) => e.stopPropagation()}
+            onClick={(e) => { 
               e.stopPropagation(); 
               startEditing(); 
             }}
